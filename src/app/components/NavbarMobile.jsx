@@ -1,0 +1,166 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+
+export default function NavbarMobile() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isPurchaseOpen, setIsPurchaseOpen] = useState(false);
+
+  return (
+    <>
+      {/* Top bar */}
+      <div className="fixed top-0 left-0 w-full z-50 bg-white text-black flex items-center justify-between px-4 py-3 border-b shadow-sm md:hidden">
+        {/* Logo */}
+        <div className="max-w-[75px] flex flex-row gap-2">
+          <Link href="/">
+            {/* Replace with your logo SVG */}
+            <svg
+              width="1719"
+              height="444"
+              viewBox="0 0 1719 444"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-auto transition-all duration-500 fill-[#39363a]"
+            >
+              <path
+                d="M1441.48 98.6901H1531.59L1603.64 304.22H1613.33L1674.34 98.6901H1718.05L1635.28 373.505C1630.32 389.934 1623.35 403.265 1614.36 413.495C1605.37 424.035 1594.36 431.63 1581.34 436.28C1568.63 441.24 1553.75 443.72 1536.7 443.72H1503.69V403.73H1539.49C1550.03 403.73 1558.87 402.335 1566 399.545C1573.44 397.065 1579.48 392.725 1584.13 386.525C1589.09 380.325 1593.12 372.109 1596.22 361.88L1602.29 341.42H1574.83L1498.27 132.17H1441.48V267.95C1441.48 281.28 1445.04 291.665 1452.17 299.105C1459.61 306.235 1470 309.8 1483.33 309.8H1527.04V349.79H1488.91C1470.31 349.79 1454.19 347.155 1440.55 341.885C1427.22 336.615 1416.83 327.625 1409.39 314.915C1402.26 301.895 1398.7 284.38 1398.7 262.37V132.17H1375.62V347H1330.99V134.03H1292.86V98.6901H1398.7V23.36H1441.48V98.6901ZM220.417 16.1783H238.477L392 268.543L364 347H46.9229L38.1592 331.605H27.3232L-4 277.366H-3.94043L36.2051 207.731L73.3916 186.297L134.913 79.7721L122.538 58.3375L152.145 6.99963H215.146L220.417 16.1783ZM810.879 37.3102H778.329C766.859 37.3102 758.024 40.5649 751.824 47.0748C745.624 53.2748 742.524 61.9549 742.524 73.1149V98.6901H859.239V83.3453C859.239 55.7556 866.524 35.4503 881.094 22.4303C895.664 9.41037 917.054 2.90009 945.264 2.90002H973.164V40.1002H937.824C926.354 40.1002 917.519 43.355 911.319 49.8649C905.119 56.0649 902.02 64.745 902.02 75.9049V98.6901H968.514V132.17H902.02V347H859.239V132.17H742.524V347H662.555L625.265 245.63H465.663L429.59 347H384.02L506.315 7.55042H583.505L699.744 320.665V132.17H665.334V98.6901H699.744V80.5553C699.744 52.9653 707.03 32.6603 721.6 19.6403C736.17 6.62034 757.56 0.109985 785.77 0.109985H810.879V37.3102ZM1074.53 347H1029.89V134.03H993.624V98.6901H1074.53V347ZM1214.9 91.2496C1246.21 91.2496 1269.3 101.015 1284.18 120.545C1299.37 140.075 1306.97 168.285 1306.97 205.175V347H1262.33V195.875C1262.33 176.655 1256.9 161.31 1246.05 149.84C1235.2 138.061 1220.32 132.17 1201.41 132.17C1181.88 132.17 1166.07 138.215 1153.98 150.305C1141.89 162.395 1135.85 178.515 1135.85 198.665V347H1091.21V98.6901H1126.55V156.288C1127.75 151.738 1129.14 147.418 1130.73 143.33C1137.55 126.28 1147.78 113.415 1161.42 104.735C1175.06 95.745 1192.27 91.2496 1213.04 91.2496H1214.9ZM80.4375 289.209H184.593L172.572 268.424L286.084 268.543L189.271 101.208L80.4375 289.209ZM480.225 204.71H610.211L552.735 48.4703H535.823L480.225 204.71ZM1042.45 2.90002C1052.37 2.90005 1059.65 5.53536 1064.3 10.8053C1069.26 16.0753 1071.74 22.7404 1071.74 30.8004C1071.74 38.8602 1069.26 45.5246 1064.3 50.7946C1059.65 56.0645 1052.37 58.6998 1042.45 58.6998C1032.53 58.6998 1025.09 56.0646 1020.13 50.7946C1015.48 45.5247 1013.15 38.8601 1013.15 30.8004C1013.15 22.7405 1015.48 16.0753 1020.13 10.8053C1025.09 5.53531 1032.53 2.90002 1042.45 2.90002ZM1343.54 2.90002C1353.46 2.90002 1360.75 5.53531 1365.4 10.8053C1370.36 16.0753 1372.83 22.7405 1372.83 30.8004C1372.83 38.86 1370.36 45.5247 1365.4 50.7946C1360.75 56.0646 1353.46 58.6998 1343.54 58.6998C1333.62 58.6998 1326.18 56.0645 1321.22 50.7946C1316.57 45.5246 1314.25 38.8602 1314.25 30.8004C1314.25 22.7404 1316.57 16.0753 1321.22 10.8053C1326.18 5.5354 1333.62 2.90006 1343.54 2.90002Z"
+                fill="#39363a"
+              />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Menu button */}
+        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          {isOpen ? (
+            // Close Icon
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            // Hamburger Icon
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 9h16.5m-16.5 6.75h16.5"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Modal Menu */}
+      {isOpen && (
+        <div className="fixed inset-0 z-40 bg-white text-black pt-20 px-6 overflow-y-auto">
+          <div className="flex flex-col gap-4">
+            {/* CTA Buttons */}
+            <button className="w-full bg-black text-white py-3 rounded-md font-medium hover:opacity-90 transition">
+              Sign Up
+            </button>
+            <button className="w-full border py-3 rounded-md font-medium hover:bg-gray-100 transition">
+              Log In
+            </button>
+
+            {/* Nav Items */}
+            <ul className="mt-4 space-y-4">
+              {/* Products Section */}
+              <li>
+                <li
+                  onClick={() => setIsProductsOpen(!isProductsOpen)}
+                  className="w-full flex justify-between items-center"
+                >
+                  Products
+                  <span className="text-gray-400">
+                    {isProductsOpen ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                      className="size-4"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/></svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
+                      className="size-4"><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    )}
+                  </span>
+                </li>
+                {isProductsOpen && (
+                  <ul className="pl-4 mt-2 space-y-2">
+                    <li>Affinity Designer 2</li>
+                    <li>Affinity Photo 2</li>
+                    <li>Affinity Publisher 2</li>
+                    <li>Universal Licence</li>
+                    <li>What’s New</li>
+                  </ul>
+                )}
+              </li>
+
+              {/* Purchase Section */}
+              <li>
+                <li
+                  onClick={() => setIsPurchaseOpen(!isPurchaseOpen)}
+                  className="w-full flex justify-between items-center"
+                >
+                  Purchase
+                  <span className="text-gray-400">
+                    {isProductsOpen ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
+                      className="size-4"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/></svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
+                      className="size-4"><path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    )}
+                  </span>
+                </li>
+                {isPurchaseOpen && (
+                  <ul className="pl-4 mt-2 space-y-2 ">
+                    <li>Purchase Options</li>
+                    <li>Upgrade from V1</li>
+                    <li>Volume Licensing</li>
+                    <li>Business</li>
+                    <li>Education</li>
+                    <li>Join Beta Program</li>
+                  </ul>
+                )}
+              </li>
+
+              {/* Other Links */}
+              <Link href="/pricing" className="block">
+                Pricing
+              </Link>
+              <Link href="/add-ons" className="block">
+                Add-ons
+              </Link>
+              <Link href="/learn" className="block">
+                Learn
+              </Link>
+              <Link href="/docs" className="block">
+                Docs
+              </Link>
+              <Link href="/contact" className="block">
+                Contact
+              </Link>
+            </ul>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

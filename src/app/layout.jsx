@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import NavbarMobile from "./components/NavbarMobile";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />{children}<Footer />
+        <div className="w-full sticky top-0 left-0 z-50">
+        <div className="hidden md:block"><Navbar /></div>
+        <div className="block md:hidden"><NavbarMobile /></div>
+        </div>
+        {children}
+        <Footer />
       </body>
     </html>
   );
